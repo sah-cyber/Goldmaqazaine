@@ -1,0 +1,89 @@
+
+
+{% extends 'gold/base.html' %}
+
+ {% load static %}
+
+{% block footer %}
+  <section class="info_section ">
+    <div class="container">
+      <div class="info_container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="info_logo">
+              <a href="">
+                <img src="{% static 'goldhome/images/logo.png' %}" alt="">
+                <span>
+                  QIZIL
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="info_contact">
+              <a href="">
+                <img src="{% static 'goldhome/images/location.png' %}" alt="">
+                <span>
+                  Ünvan
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="info_contact">
+              <a href="">
+                <img src="{% static 'goldhome/images/phone.png' %}" alt="">
+                <span>
+                  +994 00 000 00 00
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="info_contact">
+              <a href="">
+                <img src="{% static 'goldhome/images/mail.png' %}" alt="">
+                <span>
+                  demo@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="info_social">
+          <div class="d-flex justify-content-center">
+            <h5 class="info_heading">
+              Sosial Əlaqələrimiz
+            </h5>
+          </div>
+          <div class="social_box">
+            <a href="">
+              <img src="{% static 'goldhome/images/fb.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'goldhome/images/twitter.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'goldhome/images/linkedin.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'goldhome/images/insta.png' %}" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ <section class="container-fluid footer_section">
+    <p>
+      &copy; <span id="displayYear"></span> Bizimlə bir addim öndə!
+      <a href="https://html.design/">Sizə Xidmətimizlə Qürür Duyuruq</a>
+    </p>
+  </section>
+  <!-- footer section -->
+
+
+
+
+{% endblock %}

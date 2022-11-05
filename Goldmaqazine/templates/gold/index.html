@@ -1,0 +1,38 @@
+{% extends 'gold/base.html' %}
+ {% load static %}
+
+{% block body %}
+ <div class="hero_area">
+    {% include 'gold/header.html' %}
+    {% include 'gold/carusel.html' %}
+  </div>
+
+  <!-- item section -->
+<section class="about_section layout_padding2-top layout_padding-bottom">
+    <div class="design-box">
+      <img src="{% static 'goldhome/images/design-2.png' %}" alt="">
+    </div>
+  </section>
+  <div class="item_section layout_padding2">
+    <div class="container">
+      <div class="item_container">
+          {% for cat in cats %}
+        <div class="box">
+          <div class="price">
+            <h6>
+              {{ cat.title }}
+            </h6>
+          </div>
+          <div class="img-box">
+              <a href="{% url 'category' cat.pk  %}"><img src="{{ cat.image.url }}" alt=""></a>
+          </div>
+        </div>
+          {% endfor %}
+    </div>
+  </div>
+
+  <!-- end item section -->
+     {% include 'gold/footer.html' %}
+  <!-- footer section -->
+{% endblock %}
+

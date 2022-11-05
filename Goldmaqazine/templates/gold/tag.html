@@ -1,0 +1,38 @@
+
+
+{% extends 'gold/base.html' %}
+
+{% load static %}
+
+
+{% block header %}
+    <div class="hero_area">
+    {% include 'gold/header.html' %}
+
+{% endblock %}
+</div>
+{% block category %}
+
+ <div class="item_section layout_padding2">
+    <div class="container">
+      <div class="item_container">
+          {% for tg in tag %}
+        <div class="box">
+          <div class="price">
+          </div>
+          <div class="img-box">
+              <a href="{{ tg.get_absalute_url }}"><h4>{{ tg.title }}</h4></a>
+          </div>
+
+        </div>
+          {% endfor %}
+    </div>
+  </div>
+{% endblock %}
+  <!-- end info_section -->
+
+
+
+
+
+

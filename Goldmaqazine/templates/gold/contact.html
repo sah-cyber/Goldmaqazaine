@@ -1,0 +1,53 @@
+
+{% extends 'gold/base.html' %}
+
+{% load static %}
+
+
+{% block header %}
+    <div class="hero_area">
+    {% include 'gold/header.html' %}
+
+{% endblock %}
+</div>
+{% block contact %}
+
+  <section class="contact_section layout_padding">
+    <div class="design-box">
+      <img src="{% static 'goldhome/images/design-2.png' %}" alt="">
+    </div>
+    <div class="container ">
+      <div class="">
+        <h2 class="">
+          Bizimlə Əlaqə
+        </h2>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <form action="{% url 'contact' %}" method="post">
+              {% csrf_token %}
+
+                    <div>
+                        {{ form.as_div }}
+
+                    </div>
+                    <div class="invalid-feedback">
+                        {{ field.errors }}
+                    </div>
+                      <div class="d-flex ">
+                     <button type="submit">
+                        GÖNDƏR
+                      </button>
+                    </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
+
+{% block footer %} {% include 'gold/footer.html' %} {% endblock %}

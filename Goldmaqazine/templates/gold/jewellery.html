@@ -1,0 +1,63 @@
+
+{% extends 'gold/base.html' %}
+
+{% load static %}
+
+
+{% block header %}
+    <div class="hero_area">
+    {% include 'gold/header.html' %}
+
+{% endblock %}
+</div>
+
+
+
+
+  <!-- item section -->
+{% block jewellery %}
+
+{% include 'gold/_sitebar2.html' %}
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item ">
+         {% if page_obj.has_previous %}
+               <a class="page-link" href="?page={{page_obj.previous_page_number }}" >Novbeti</a>
+         {% endif %}
+     </li>
+          {% for p in gold.paginator.page_range  %}
+               {% if gold.number == p  %}
+
+                   <li class="page-item active"><a class="page-link" href="?page={{ p }}">Sehife : {{ p }}</a></li>
+
+               {% else   %}
+
+                   <li class="page-item "><a class="page-link" href="?page={{ p }}">{{ p }}</a></li>
+               {% endif %}
+
+          {% endfor %}
+
+
+
+       <li class="page-item ">
+        {% if page_obj.next_page_number == page_obj.next_page_number %}
+            <a class="page-link " href="?page={{page_obj.next_page_number}}" >Sonraki</a>
+            {% else %}
+            <li class="page-item  "><a class="page-link" href="?page={{ p }}">Son:{{ p }}</a></li>
+        {% endif %}
+    </li>
+  </ul>
+</nav>
+
+
+
+
+
+
+{% endblock %}
+
+
+{% block footer %} {% include 'gold/footer.html' %} {% endblock %}
+
+

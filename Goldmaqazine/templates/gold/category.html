@@ -1,0 +1,62 @@
+{% extends 'gold/base.html' %}
+
+{% load static %}
+
+
+{% block header %}
+    <div class="hero_area">
+    {% include 'gold/header.html' %}
+
+{% endblock %}
+</div>
+{% block category %}
+
+ <div class="item_section layout_padding2">
+    <div class="container">
+      <div class="item_container">
+
+          {% for cat in category %}
+        <div class="box">
+          <div class="price">
+            <h5>
+              {{ cat.title }}
+            </h5>
+
+               <h6>
+              {{ cat.post_title }}
+              </h6>
+
+
+          </div>
+          <div class="img-box">
+
+              <a href="{{ cat.get_absalute_url }}"><img src="{{ cat.image.url }}" alt=""></a>
+          </div>
+        <h5>{{ cat.price }}</h5> <p>AZN</p>
+
+
+        </div>
+          {% endfor %}
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+{% endblock %}
+  <!-- end info_section -->
+
+
+
+  <!-- footer section -->
+
+
+
+
+
+
+
